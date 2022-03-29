@@ -75,7 +75,68 @@ body main .head button {
 
 body main .head nav {
   position: absolute;
+  background-color: var(--clr-neutral-100);
+  width: 85%;
+  top: 100px;
+  padding: var(--p1);
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
   opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity .3s ease, -webkit-transform .3s ease;
+  transition: opacity .3s ease, -webkit-transform .3s ease;
+  transition: transform .3s ease, opacity .3s ease;
+  transition: transform .3s ease, opacity .3s ease, -webkit-transform .3s ease;
+}
+
+body main .head nav.shown {
+  -webkit-transform: unset;
+          transform: unset;
+  opacity: 1;
+  pointer-events: all;
+}
+
+body main .head nav::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 30px solid var(--clr-neutral-100);
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  bottom: 100%;
+  right: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+body main .head nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+body main .head nav ul li {
+  margin: 1.2em 0;
+}
+
+body main .head nav ul li:last-child {
+  margin-top: 2em;
+}
+
+body main .head nav ul li a {
+  color: var(--clr-neutral-500);
+  font-size: var(--fs-500);
+  text-decoration: none;
+}
+
+body main .head nav ul li .contact {
+  font-size: var(--fs-400);
+  text-transform: uppercase;
+  font-family: 'Fraunces', sans-serif;
+  color: var(--clr-neutral-800);
+  background: var(--clr-primary-yellow);
+  padding: .5em .8em;
+  border-radius: 30px;
 }
 
 body main h1 {
